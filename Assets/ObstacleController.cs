@@ -14,9 +14,13 @@ public class ObstacleController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         rb.MovePosition(transform.position + Vector3.left * speed * Time.deltaTime);
+    }
+
+     void OnCollisionEnter2D(Collision2D collision) 
+    {
+        Debug.Log("collision");
     }
 }

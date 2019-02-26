@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject hitParticle;
+    private float health = 3f;
     private Rigidbody2D rb;
 
     void Awake()
@@ -13,13 +15,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKeyDown("w") && transform.position.y < 3)
         {
             rb.MovePosition(transform.position + new Vector3(0, 3, 0));
         }
-        if (Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("s") && transform.position.y > -3)
         {
             rb.MovePosition(transform.position + new Vector3(0, -3, 0));
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider) 
+    {
+        health -= 1;
+        Instantiate(hitParticle, collider.gameObject.transform.position, Quaternion.identity);
+        Destroy(collider.gameObject);
+        
     }
 }
