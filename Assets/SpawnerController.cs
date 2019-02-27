@@ -6,14 +6,20 @@ public class SpawnerController : MonoBehaviour
 {
 
     public GameObject obstacle;
-    public float timeBetweenSpawns = 2f; // 0.8f maybe minimun
+    public float timeBetweenSpawns = 2f;
     public float timeCount;
+
+    public float minTimBetweenSpawns = .8f;
+    public float decrementAmountBetweenSpawns = .2f;
+    public float decrementTimeBetweenSpawns = 5f;
+    public float decrementCount;
 
     private int[][] patterns = new int[][] { new int[] { 0, 1, 1 }, new int[] { 1, 0, 1 }, new int[] { 1, 1, 0 } };
 
     void Awake()
     {
         timeCount = timeBetweenSpawns;
+        decrementCount = decrementTimeBetweenSpawns;
     }
 
     void Update()
@@ -38,6 +44,19 @@ public class SpawnerController : MonoBehaviour
         else
         {
             timeCount -= Time.deltaTime;
+        }
+
+        if (timeBetweenSpawns > minTimBetweenSpawns)
+        {
+            if (decrementCount < 0)
+            {
+                timeBetweenSpawns -= decrementAmountBetweenSpawns;
+                decrementCount = decrementTimeBetweenSpawns;
+            }
+            else
+            {
+                decrementCount -= Time.deltaTime;
+            }
         }
     }
 }
