@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject buttonRestart;
+    public GameObject spawnerController;
+    public Button buttonRestart;
+
     void OnEnable()
     {
         PlayerController.OnPlayerDead += OnPlayerDead;
@@ -16,16 +19,16 @@ public class GameController : MonoBehaviour
 
     void OnPlayerDead(GameObject player)
     {
-        Debug.Log("Player dead");
         Destroy(player);
-        Time.timeScale = 0;
-        buttonRestart.SetActive(true);
+        spawnerController.SetActive(false);
+        buttonRestart.gameObject.SetActive(true);
     }
 
-    public void Restart() 
+    public void Restart()
     {
-        Time.timeScale = 1;
-        buttonRestart.SetActive(false);
+        spawnerController.SetActive(true);
+        buttonRestart.gameObject.SetActive(false);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
