@@ -274,7 +274,7 @@ GameObject:
   m_Layer: 0
   m_Name: Destroyer
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -601,7 +601,7 @@ GameObject:
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -845,6 +845,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dde42aebc32f2a488909922ad5a5e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSound: {fileID: 6697479899174045043, guid: c8ba778c9112e1841a74ad3d28824eb0,
+    type: 3}
+  hitSound: {fileID: 7327102369935426531, guid: d203873742b012049af6a61228bb756d,
+    type: 3}
   hitParticle: {fileID: 7659146198269683531, guid: c0005affef114a176bc62da8149c7ed9,
     type: 3}
   textHealth: {fileID: 1425312862}

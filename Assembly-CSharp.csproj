@@ -53,12 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DestroyerController.cs" />
-     <Compile Include="Assets\GameController.cs" />
-     <Compile Include="Assets\ObstacleController.cs" />
-     <Compile Include="Assets\ParticleController.cs" />
-     <Compile Include="Assets\PlayerController.cs" />
-     <Compile Include="Assets\SpawnerController.cs" />
+     <Compile Include="Assets\Scripts\DestroyerController.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\ObstacleController.cs" />
+     <Compile Include="Assets\Scripts\ParticleController.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\SpawnerController.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/wesle/Documents/UnityProjects/infinity-run/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
